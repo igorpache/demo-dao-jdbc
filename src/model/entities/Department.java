@@ -1,11 +1,9 @@
 package model.entities;
 
-import java.io.Serializable;
 import java.util.Objects;
 
-public class Department implements Serializable {
+public class Department  {
 
-    private static final long serialVersionUID = 1L;
 
     private Integer id;
     private String name;
