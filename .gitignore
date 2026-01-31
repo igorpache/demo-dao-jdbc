@@ -54,3 +54,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 >>>>>>> f7ca730 (creating project and git rpst)
+
+db.properties
