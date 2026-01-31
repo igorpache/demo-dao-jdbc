@@ -1,6 +1,6 @@
 package application;
-import model.entities.Department;
-import model.entities.Seller;
+import modelEntities.Department;
+import modelEntities.Seller;
 import java.util.Date;
 
 
