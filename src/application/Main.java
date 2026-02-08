@@ -29,5 +29,11 @@ public class Main {
             System.out.println(obj);
         }
 
+        System.out.println("\n=== TEST 4: seller update ====");
+        seller = sellerDao.findById(1);
+        seller.setName("Martha Waine");
+        sellerDao.update(seller);
+
+
     }
 }
