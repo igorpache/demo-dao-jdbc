@@ -2,14 +2,12 @@ package modelDaoImpl;
 
 import db.DB;
 import db.DbException;
+import db.DbIntegrityException;
 import modelDao.SellerDao;
 import modelEntities.Department;
 import modelEntities.Seller;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +28,7 @@ public class SellerDaoJDBC implements SellerDao {
             ps = conn.prepareStatement(
                     "INSERT INTO seller "
                     + "(Name, Email, BirthDate, BaseSalary, DepartmentId) "
-                    + "VALUES (?, ?, ?, ?, ?)");
+                    + "VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, obj.getName());
             ps.setString(2, obj.getEmail());
@@ -100,7 +98,7 @@ public class SellerDaoJDBC implements SellerDao {
             ps.executeUpdate();
         }
         catch (SQLException e) {
-            throw new DbException(e.getMessage());
+            throw new DbIntegrityException(e.getMessage());
         }
     }
 
